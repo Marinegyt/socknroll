@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :socks
-  has_many :requests
+  # has_many :requests
 
- #  validates  :email, :password, :address, pressence: true
+  validates :first_name, :last_name, :address, presence: true
 end
