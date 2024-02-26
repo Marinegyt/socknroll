@@ -1,0 +1,12 @@
+<h1>Toutes nos chaussettes</h1>
+
+<ul>
+  <% @socks.each do |sock| %>
+    <li><%= sock.title %></li>
+    <li><%= sock.description %></li>
+    <li><%= sock.price %></li>
+    <li><%= sock.state %></li>
+    <li><%= sock.color %></li>
+    <li><%= sock.size %></li>
+  <% end %>
+</ul>
