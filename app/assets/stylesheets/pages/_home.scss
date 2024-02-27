@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+ // Specific CSS for your home-page
+ .banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 20px;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.card-socks {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  height: 300px;
+  width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+}

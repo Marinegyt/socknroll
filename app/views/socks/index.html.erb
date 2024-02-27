@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.wigwam.com/cdn/shop/files/home-cover.jpg?v=1699370662&width=3840);">
+  <div class="container">
+    <h1>Sock'n'roll</h1>
+    <p>Changez votre vie, et retrouvez le plaisir d'avoir des chausettes assorties !</p>
+    <a class="btn btn-primary" href="#">Démarrez l'expérience</a>
+  </div>
+</div>
+
+<div class="card-map">
+</div>
+
+<div class="container">
+  <% @socks.each do |sock| %>
+    <div class="cards">
+      <div class="card-socks" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.squarespace-cdn.com/content/v1/64669fa1b4732456814c6070/1684982300529-2MXJAU9KNREZYI6HHMYR/Boot+Socks+detail.jpeg?format=1500w)">
+        <div class="card-socks-infos">
+          <div class="row mb-3"><h2><%= sock.title %></h2></div>
+            <div class="row mb-3"><p><%= sock.description %></p></div>
+          <div class="row mb-3"><h2 class="card-pricing"><%= sock.price %> €</h2></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
