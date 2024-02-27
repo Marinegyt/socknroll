@@ -1,6 +1,6 @@
 class Sock < ApplicationRecord
   belongs_to :user
-  has_many :requests
+  has_many :requests, dependent: :destroy
 
   validates :title, :description, :price, :state, :color, :size, presence: true
   STATES = ['Excellent', 'Good', 'Average', 'Worn out', 'Hole included']
