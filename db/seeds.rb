@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "2319, on a un 2319!"
+Request.destroy_all
 Sock.destroy_all
 User.destroy_all
-Request.destroy_all
 puts "Chaussettes détruites!"
 puts "Utilisateurs détruits!"
 puts "Requêtes détruites!"
