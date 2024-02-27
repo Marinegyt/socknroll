@@ -23,16 +23,16 @@ puts "Création de nouveaux utilisateurs..."
 puts 'Utilisateurs créés !'
 
 puts "Création de nouvelles chaussettes..."
-@sock1 = Sock.create!(user_id: @user_cedric.id, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
-@sock2 = Sock.create!(user_id: @user_perrine.id, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
-@sock3 = Sock.create!(user_id: @user_mathieu.id, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
-@sock4 = Sock.create!(user_id: @user_marine.id, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
-@sock5 = Sock.create!(user_id: @user_cedric.id, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
+@sock1 = Sock.create!(user: @user_cedric, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
+@sock2 = Sock.create!(user: @user_perrine, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
+@sock3 = Sock.create!(user: @user_mathieu, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
+@sock4 = Sock.create!(user: @user_marine, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
+@sock5 = Sock.create!(user: @user_cedric, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
 puts 'Chaussettes créées !'
 
 
 puts "Création de nouvelles requêtes..."
-Request.create!(start_date: "Tue, 5 Mar 2024", end_date: "Fri, 8 Mar 2024", user_msg: "Cette chaussette est farfelue à souhait. Il me la faut.", sock_id: @sock2.id , user_id: @user_mathieu.id)
-Request.create!(start_date: "Wed, 28 Feb 2024", end_date: "Thu, 7 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour séduire un homme marié.", sock_id: @sock5.id , user_id: @user_perrine.id)
-Request.create!(start_date: "Fri, 8 Mar 2024", end_date: "Sat, 9 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour éclater la tronche de la connasse qui m'a piqué mon mari.", sock_id: @sock3.id , user_id: @user_marine.id)
+Request.create!(start_date: "Tue, 5 Mar 2024", end_date: "Fri, 8 Mar 2024", user_msg: "Cette chaussette est farfelue à souhait. Il me la faut.", sock: @sock2 , user: @user_mathieu)
+Request.create!(start_date: "Wed, 28 Feb 2024", end_date: "Thu, 7 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour séduire un homme marié.", sock: @sock5 , user: @user_perrine)
+Request.create!(start_date: "Fri, 8 Mar 2024", end_date: "Sat, 9 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour éclater la tronche de la connasse qui m'a piqué mon mari.", sock: @sock3 , user: @user_marine)
 puts 'Requêtes créées!'
