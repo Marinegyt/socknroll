@@ -32,7 +32,7 @@ puts 'Chaussettes créées !'
 
 
 puts "Création de nouvelles requêtes..."
-Request.create!(start_date: "Tue, 5 Mar 2024", end_date: "Fri, 8 Mar 2024", user_msg: "Cette chaussette est farfelue à souhait. Il me la faut.", sock_id: @sock2.id , user_id: @user_mathieu.id)
-Request.create!(start_date: "Wed, 28 Feb 2024", end_date: "Thu, 7 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour séduire un homme marié.", sock_id: @sock5.id , user_id: @user_perrine.id)
-Request.create!(start_date: "Fri, 8 Mar 2024", end_date: "Sat, 9 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour éclater la tronche de la connasse qui m'a piqué mon mari.", sock_id: @sock3.id , user_id: @user_marine.id)
+Request.create!(start_date: "Tue, 5 Mar 2024", end_date: "Fri, 8 Mar 2024", user_msg: "Cette chaussette est farfelue à souhait. Il me la faut.", sock: @sock2 , user: @user_mathieu)
+Request.create!(start_date: "Wed, 28 Feb 2024", end_date: "Thu, 7 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour séduire un homme marié.", sock: @sock5 , user: @user_perrine)
+Request.create!(start_date: "Fri, 8 Mar 2024", end_date: "Sat, 9 Mar 2024", user_msg: "J'ai besoin de cette chaussette pour éclater la tronche de la connasse qui m'a piqué mon mari.", sock: @sock3 , user: @user_marine)
 puts 'Requêtes créées!'
