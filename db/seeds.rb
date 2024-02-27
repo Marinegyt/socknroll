@@ -23,11 +23,11 @@ puts "Création de nouveaux utilisateurs..."
 puts 'Utilisateurs créés !'
 
 puts "Création de nouvelles chaussettes..."
-@sock1 = Sock.create!(user: @user_cedric, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
-@sock2 = Sock.create!(user: @user_perrine, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
-@sock3 = Sock.create!(user: @user_mathieu, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
-@sock4 = Sock.create!(user: @user_marine, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
-@sock5 = Sock.create!(user: @user_cedric, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
+@sock1 = Sock.create!(user_id: @user_cedric.id, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
+@sock2 = Sock.create!(user_id: @user_perrine.id, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
+@sock3 = Sock.create!(user_id: @user_mathieu.id, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
+@sock4 = Sock.create!(user_id: @user_marine.id, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
+@sock5 = Sock.create!(user_id: @user_cedric.id, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
 puts 'Chaussettes créées !'
 
 
