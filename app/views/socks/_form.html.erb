@@ -1,15 +1,20 @@
 <%= render "shared/navbar" %>
 
 <h1>Quelques informations sur votre Chaussette :</h1>
-<%= form_with model: sock do |f| %>
-  <ul><%= f.label :title %> <%= f.text_field :title %></ul>
-  <ul><%= f.label :description %> <%= f.text_field :description %></ul>
-  <ul><%= f.label :price %> <%= f.text_field :price %></ul>
-  <ul><%= f.label :size %> <%= f.text_field :size%></ul>
-  <ul><%= f.label :color %> <%= f.select :color, collection: Sock::COLORS%></ul>
-  <ul><%= f.label :state %> <%= f.select :state, collection: Sock::STATES %></ul>
-  <%= f.button :submit %>
-<% end %>
+    <%= form_with model: sock do |f| %>
+      <div class = "d-flex col-6">
+        <p><%= f.label :title %> <%= f.text_field :title %></p>
+        <p><%= f.label :description %> <%= f.text_field :description %></p></div>
+        <div class = "d-flex col-6">
+        <p><%= f.label :price %> <%= f.text_field :price %></p>
+        <p><%= f.label :size %> <%= f.text_field :size%></p></div>
+        <div class = "d-flex col-6">
+        <p><%= f.label :color %> <%= f.select :color, collection: Sock::COLORS%></p>
+        <p><%= f.label :state %> <%= f.select :state, collection: Sock::STATES %></p></div>
+        <div class = "d-flex col-6">
+        <p><%= f.label :photo %> <%= f.file_field :photo, as: :file %></p>
+        <%= f.button :submit %>
+      <% end %></div>
 </div>
 <br>
 <%= link_to "Retour à la page d'accueil", socks_path %>
