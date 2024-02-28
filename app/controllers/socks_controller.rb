@@ -1,6 +1,4 @@
 class SocksController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @socks = Sock.all
   end
