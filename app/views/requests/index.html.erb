@@ -1,1 +1,6 @@
-<%= @requests.last.user_msg %>
+<div class="container">
+  <h1>Mes demandes</h1>
+  <div class="requests-container">
+    <%= render 'card_request', sock: @sock, requests: @requests%>
+  </div>
+</div>
