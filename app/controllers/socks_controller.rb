@@ -18,6 +18,23 @@ class SocksController < ApplicationController
     end
   end
 
+  def drawer
+    @my_socks = current_user.socks
+  end
+
+  def edit
+    @sock = Sock.find(params[:id])
+  end
+
+  def update
+    @sock = Sock.find(params[:id])
+    if @sock.update(sock_params)
+      redirect_to @sock, notice: "Sock was successfully updated.", status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def show
     @sock = Sock.find(params[:id])
   end
@@ -31,6 +48,6 @@ class SocksController < ApplicationController
   private
 
   def sock_params
-    params.require(:sock).permit(:title, :description, :price, :state, :color, :size)
+    params.require(:sock).permit(:title, :description, :price, :state, :color, :size, :photo)
   end
 end
