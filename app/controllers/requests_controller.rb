@@ -11,13 +11,18 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new
+    @request = Request.new(request_params)
+    @request.user = current_user
     @request.sock = @sock
     if @request.save
-      redirect_to request_path(@request), notice: "Request was successfully created"
+      redirect_to requests_path, notice: "Request was successfully created"
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def index
+    @requests = Request.all
   end
 
   def edit
@@ -44,6 +49,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:start_date, :end_date, :user_msg)
+    params.require(:request).permit(:start_date, :end_date, :user_msg, :price)
   end
 end
