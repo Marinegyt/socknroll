@@ -18,4 +18,12 @@
 <button type="button" class="btn btn-success">Accepter</button>
 <br>
 <button type="button" class="btn btn-danger">Refuser</button>
+<br>
+ <%= link_to "Supprimer cette requête",
+  request_path(@request),
+  data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}
+%>
+ <%= link_to "Modifier cette requête",
+  edit_request_path
+%>
 </div>
