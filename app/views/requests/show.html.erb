@@ -1,10 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo_3.svg" %>
-    <% end %>
-  </div>
-</div>
+<div class="container">
+<h2>Demande de réservation</h2>
 <div class="container p-3">
   <div class="card-trip">
     <%= image_tag "dobby.webp"  %>
@@ -12,11 +7,11 @@
       <div>
         <h2> <%= @sock.title %></h2>
         <p> <%= @sock.description  %></p>
+        <p> <%= @sock.color  %></p>
+        <p> <%= @sock.state  %></p>
       </div>
       <h2>  <%= @sock.price  %>€/jour</h2>
       <%= image_tag "user-solid.svg", class: "card-trip-user avatar-bordered" %>
     </div>
   </div>
-  <br>
-  <%= link_to 'Louer cette chaussette', new_sock_request_path(@sock), class: 'btn btn-primary' %>
 </div>
