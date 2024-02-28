@@ -1,0 +1,15 @@
+<%= render "shared/navbar" %>
+
+<h1>Quelques informations sur votre Chaussette :</h1>
+<div class= "justify-content-center"><%= form_with model: sock do |f| %>
+  <ul><%= f.label :title %> <%= f.text_field :title %></ul>
+  <ul><%= f.label :description %> <%= f.text_field :description %></ul>
+  <ul><%= f.label :price %> <%= f.text_field :price %></ul>
+  <ul><%= f.label :size %> <%= f.text_field :size%></ul>
+  <ul><%= f.label :color %> <%= f.select :color, collection: Sock::COLORS%></ul>
+  <ul><%= f.label :state %> <%= f.select :state, collection: Sock::STATES %></ul>
+  <%= f.button :submit %>
+<% end %>
+</div>
+<br>
+<%= link_to "Retour à la page d'accueil", socks_path %>

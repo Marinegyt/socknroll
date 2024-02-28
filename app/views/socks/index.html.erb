@@ -1,8 +1,11 @@
+<%= render "shared/navbar" %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.wigwam.com/cdn/shop/files/home-cover.jpg?v=1699370662&width=3840);">
   <div class="container">
     <h1>Sock'n'roll</h1>
     <p>Changez votre vie, et retrouvez le plaisir d'avoir des chausettes assorties !</p>
     <a class="btn btn-primary" href="#">Démarrez l'expérience</a>
+    <button class="btn btn-outline-primary"><%= link_to "Proposez une Chaussette", new_sock_path %></button>
   </div>
 </div>
 
@@ -17,6 +20,7 @@
           <div class="row mb-3"><h2><%= sock.title %></h2></div>
             <div class="row mb-3"><p><%= sock.description %></p></div>
           <div class="row mb-3"><h2 class="card-pricing"><%= sock.price %> €</h2></div>
+          <div class="row mb-3"><p><%= link_to "Voir plus d'infos", sock %></p></div>
         </div>
       </div>
     </div>
