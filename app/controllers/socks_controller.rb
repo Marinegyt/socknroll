@@ -1,4 +1,5 @@
 class SocksController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @socks = Sock.all
@@ -10,6 +11,8 @@ class SocksController < ApplicationController
 
   def create
     @sock = Sock.new(sock_params)
+    @current_user.sock.attach(sock_params)
+
     @sock.save
     if @sock.save
       redirect_to sock_path(@sock), notice: "Sock was successfully created"
@@ -25,9 +28,9 @@ class SocksController < ApplicationController
   def destroy
     @sock = Sock.find(params[:id])
     @sock.destroy
-    # a changer quand on aura vu avec Jérome
     redirect_to root_path
   end
+
   private
 
   def sock_params

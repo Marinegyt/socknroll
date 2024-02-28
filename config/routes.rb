@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "socks#index"
   resources :socks do
     resources :requests, only: [:create, :new]
   end
