@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 
 <h1>Quelques informations sur votre Chaussette :</h1>
-<div class= "justify-content-center"><%= form_with model: sock do |f| %>
+<%= form_with model: sock do |f| %>
   <ul><%= f.label :title %> <%= f.text_field :title %></ul>
   <ul><%= f.label :description %> <%= f.text_field :description %></ul>
   <ul><%= f.label :price %> <%= f.text_field :price %></ul>

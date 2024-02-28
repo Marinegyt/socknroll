@@ -9,8 +9,7 @@ class SocksController < ApplicationController
 
   def create
     @sock = Sock.new(sock_params)
-    @current_user.sock.attach(sock_params)
-
+    @sock.user = current_user
     @sock.save
     if @sock.save
       redirect_to sock_path(@sock), notice: "Sock was successfully created"
@@ -32,6 +31,6 @@ class SocksController < ApplicationController
   private
 
   def sock_params
-    params.require(:sock).permit(:title, :descritption, :price, :state, :color, :size)
+    params.require(:sock).permit(:title, :description, :price, :state, :color, :size)
   end
 end
