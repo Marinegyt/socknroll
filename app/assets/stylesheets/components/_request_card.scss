@@ -1,13 +1,13 @@
 
 .card-request {
   overflow: hidden;
-  height: 160px;
+  height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-
+  text-decoration: none;
 }
 
 .card-request img {
@@ -32,4 +32,9 @@
 
 .card-request .card-request-infos {
   padding: 16px;
+}
+
+.requests-container a {
+  text-decoration: none;
+  color: black
 }

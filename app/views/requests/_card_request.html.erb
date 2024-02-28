@@ -1,19 +1,20 @@
-
-  <% @requests.each do |request| %>
+<% requests.each do |request| %>
+  <%= link_to request_path(request) do%>
     <div class="card-request">
-      <% @sock = request.sock %>
+      <% sock = request.sock %>
       <%= image_tag("dobby.webp", width: "100px") %>
       <div class="card-request-infos">
-        <h2><%= @sock.title %></h2>
-        <p> Taille : <%= @sock.size %></p>
-        <p> Couleur : <%= @sock.color %></p>
-        <p> Etat : <%= @sock.state %></p>
+        <h2><%= sock.title %></h2>
+        <p> Taille : <%= sock.size %></p>
+        <p> Couleur : <%= sock.color %></p>
+        <p> Etat : <%= sock.state %></p>
         <p> Date de début : <%= request.start_date %></p>
         <p> Date de fin : <%= request.end_date %></p>
         <div class="card-request-actions">
-          <%= link_to "Voir", request_path(request), class: "btn btn-primary" %>
           <%= link_to "Modifier", edit_request_path(request), class: "btn btn-secondary" %>
-          <%= link_to "Supprimer", request_path(request), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          <%= link_to "Annuler", requests_path, data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}, class: "btn btn-danger" %>
+        </div>
       </div>
     </div>
   <% end %>
+<% end %>
