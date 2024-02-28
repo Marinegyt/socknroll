@@ -13,14 +13,10 @@
     </div>
   </div>
   <br>
-<<<<<<< HEAD
-  <%= link_to 'Louer cette chaussette', new_sock_request_path(@sock), class: 'btn btn-primary' %>
-=======
   <%= link_to 'Louer cette chaussette', new_request_path(@sock), class: 'btn btn-primary' %>
 <br>
   <%= link_to "Supprimer cette annonce",
   sock_path(@sock),
   data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}
 %>
->>>>>>> master
 </div>

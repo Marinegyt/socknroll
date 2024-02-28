@@ -1,17 +1,21 @@
 <div class="container">
 <h2>Demande de réservation</h2>
-<div class="container p-3">
-  <div class="card-trip">
-    <%= image_tag "dobby.webp"  %>
-    <div class="card-trip-infos">
-      <div>
-        <h2> <%= @sock.title %></h2>
-        <p> <%= @sock.description  %></p>
-        <p> <%= @sock.color  %></p>
-        <p> <%= @sock.state  %></p>
-      </div>
-      <h2>  <%= @sock.price  %>€/jour</h2>
-      <%= image_tag "user-solid.svg", class: "card-trip-user avatar-bordered" %>
-    </div>
-  </div>
+<%= render "card_résumé" %>
+<br>
+<p><%= @request.user.first_name %> <%= @request.user.last_name %></p>
+<p><%= @request.user_msg %></p>
+<br>
+<h2>Détails du prix</h2>
+<% @number_of_days = (@request.end_date - @request.start_date).to_i%>
+<% @laundry_fee = 0.5%>
+<% @company_fee = 0.5%>
+<% @rental_price = @sock.price * @number_of_days%>
+<p><%= @sock.price %>€ x <%= @number_of_days%> jours_______________<%= @rental_price %>€</p>
+<p>Frais de lessive_______________<%= @laundry_fee %>€</p>
+<p>Frais de service_______________<%= @company_fee %>€</p>
+<hr>
+<p><strong>Total</strong>_______________<strong><%= @rental_price + @laundry_fee + @company_fee %>€</strong></p>
+<button type="button" class="btn btn-success">Accepter</button>
+<br>
+<button type="button" class="btn btn-danger">Refuser</button>
 </div>
