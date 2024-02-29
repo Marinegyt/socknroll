@@ -16,14 +16,28 @@ body {
 
 }
 
+h1  {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: $strong-blue;
+}
+
 h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
+  color: $third-blue;
 }
 
 p {
   font-size: 16px;
   opacity: .7;
   margin: 0;
+  color: $second-blue;
+}
+
+a {
+  text-decoration: none;
+  color: $third-blue;
 }
