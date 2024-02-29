@@ -3,27 +3,28 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.wigwam.com/cdn/shop/files/home-cover.jpg?v=1699370662&width=3840);">
   <div class="container">
     <h1>Sock'n'roll</h1>
-    <p>Changez votre vie, et retrouvez le plaisir d'avoir des chausettes assorties !</p>
-    <a class="btn btn-primary" href="#">Trouvez des chaussettes près de chez vous</a>
-    <button class="btn btn-outline-primary"><%= link_to "Proposez une Chaussette", new_sock_path %></button>
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" placeholder="Trouvez une chaussette" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+    <!--button class="btn btn-outline-primary"><%= link_to "Proposez une Chaussette", new_sock_path %></button-->
   </div>
 </div>
 
-<div class="card-map d-inline-flex" style = "justify-content-center">
-  <p style="border:solid thick darkblue; border-radius: 1em; width:980px; height:580px">
+<div class="card-map d-inline-flex">
+  <p>MAP</p>
 </div>
 
-<div class="container">
+<div class= "cards">
   <% @socks.each do |sock| %>
-    <div class="cards">
-  <%= cl_image_tag sock.photo.key, class:"card-socks" %>
-        <div class="card-socks-infos">
-          <div class="row mb-3"><h2><%= sock.title %></h2></div>
-            <div class="row mb-3"><p><%= sock.description %></p></div>
-          <div class="row mb-3"><h2 class="card-pricing"><%= sock.price %> €</h2></div>
-          <div class="row mb-3"><p><%= link_to "Voir plus d'infos", sock %></p></div>
-        </div>
+    <%= link_to sock_path(sock) do %>
+      <div class="card-sock" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path sock.photo.key, height: 300, crop: :fill %>')">
+        <%= sock.title %>
       </div>
-    </div>
+     <% end %>
   <% end %>
 </div>
