@@ -1,4 +1,10 @@
 <div class="container">
+
+<%= link_to requests_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
+  <%= %>
+<% end %>
+
 <h2>Demande de réservation</h2>
 <%= render "card_résumé" %>
 <br>
@@ -15,11 +21,14 @@
 <p>Frais de service_______________<%= @company_fee %>€</p>
 <hr>
 <p><strong>Total</strong>_______________<strong><%= @rental_price + @laundry_fee + @company_fee %>€</strong></p>
-<% if @request.sock.user == current_user %>
+
+<% if (@request.sock.user == current_user && @request.status == 'pending') %>
   <div class="owner-actions">
-    <button type="button" class="btn btn-success">Accepter</button>
-    <button type="button" class="btn btn-danger">Refuser</button>
+    <%= link_to 'Accepter', accept_request_path(@request), class: "btn btn-success", data: { turbo_method: :patch } %>
+    <%= link_to 'Refuser', reject_request_path(@request), class: "btn btn-danger", data: { turbo_method: :patch } %>
   </div>
+  <% else %>
+  <p>Status : <%= @request.status %>.</p>
 <% end %>
 
  <%= link_to "Supprimer cette requête",
