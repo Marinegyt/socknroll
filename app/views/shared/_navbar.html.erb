@@ -1,35 +1,36 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo_3.svg" %>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="fixed-bottom">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo_3.svg" %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-            <button class="btn btn-outline-secondary"><%= link_to "Page d'Accueil", socks_path, class: "nav-link" %></button>
-            </li>
-            <li class="nav-item">
-            <button class="btn btn-outline-secondary"><%= link_to "Mon Tirroir", socks_drawer_path, class: "nav-link" %></button>
-            </li>
-            <li class="nav-item">
-            <button class="btn btn-outline-secondary"><%= link_to "Mes demandes", requests_path, class: "nav-link" %></button>
-            </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <button class="btn btn-outline-primary"><%= link_to "Page d'Accueil", socks_path, class: "nav-link" %></button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-primary"><%= link_to "Mon Tirroir", socks_drawer_path, class: "nav-link" %></button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-primary"><%= link_to "Mes demandes", requests_path, class: "nav-link" %></button>
+          </li>
           <li class="nav-item dropdown">
             <%= image_tag "user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if user_signed_in? %>
-                    Welcome <%= current_user.first_name %>
-                  <%= link_to "Mon profil", "#", class: "dropdown-item" %>
-                  <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-                </div>
-                  <% else %>
-                    <li class="nav-item"><button class="btn btn-outline-secondary"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button></li>
-                  <% end %>
-          </li>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <% if user_signed_in? %>
+                  Welcome <%= current_user.first_name %>
+                <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+                <% else %>
+                  <li class="nav-item"><button class="btn btn-outline-secondary"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button></li>
+                <% end %>
+            </li>
         </ul>
       </div>
     </div>
