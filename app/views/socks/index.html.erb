@@ -1,34 +1,39 @@
 <%= render "shared/navbar" %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.wigwam.com/cdn/shop/files/home-cover.jpg?v=1699370662&width=3840);">
-  <div class="container">
-    <h1>Sock'n'roll</h1>
+<div class="container p-3">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.wigwam.com/cdn/shop/files/home-cover.jpg?v=1699370662&width=3840);">
+    <div class="container">
+      <h1>Sock'n'roll</h1>
       <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" placeholder="Trouvez une chaussette" name="search[query]" id="search_query" />
-            <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    </form>
-    <!--button class="btn btn-outline-primary"><%= link_to "Proposez une Chaussette", new_sock_path %></button-->
-  </div>
-</div>
-
-<div class="card-map d-inline-flex">
-  <p>MAP</p>
-</div>
-
-<div class ="d-flex flex-column" style="min-height: 150vh">
-  <div class="flex-fill">
-    <div class= "cards">
-      <% @socks.each do |sock| %>
-        <%= link_to sock_path(sock) do %>
-          <div class="card-sock" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path sock.photo.key, height: 300, crop: :fill %>')">
-            <%= sock.title %>
-          </div>
-        <% end %>
-      <% end %>
+    <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" placeholder="Trouvez une chaussette" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button>
     </div>
+  </form>
+      <!--button class="btn btn-outline-primary"><%= link_to "Proposez une Chaussette", new_sock_path %></button-->
+    </div>
+  </div>
+
+  <div class="card-map d-inline-flex">
+    <p>MAP</p>
+  </div>
+
+  <div class="card-deck">
+    <% @socks.each do |sock| %>
+      <%= link_to sock_path(sock) do %>
+      <div class="card shadow p-3 mb-3 bg-white rounded">
+        <%= cl_image_tag sock.photo.key, class:"card-img-top" %>
+      <div class="card-body">
+        <div class="d-flex flex-row justify-content-between">
+        <h5 class="card-title"><%= sock.title %></h5>
+        <h5 class="card-title"><%= sock.price %>€</h5>
+        </div>
+        <p class="card-text"><small class="text-muted">Taille : <%= sock.size %></small></p>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

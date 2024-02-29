@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render "shared/navbar" %>
   <div class="container">
     <h2>Demande de réservation</h2>
@@ -34,3 +35,46 @@
     </div>
   </div>
  </div>
+=======
+<div class="container">
+
+<%= link_to requests_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
+  <%= %>
+<% end %>
+
+<h2>Demande de réservation</h2>
+<%= render "card_résumé" %>
+<br>
+<p><%= @request.user.first_name %> <%= @request.user.last_name %></p>
+<p><%= @request.user_msg %></p>
+<br>
+<h2>Détails du prix</h2>
+<% @number_of_days = (@request.end_date - @request.start_date).to_i%>
+<% @laundry_fee = 0.5%>
+<% @company_fee = 0.5%>
+<% @rental_price = @sock.price * @number_of_days%>
+<p><%= @sock.price %>€ x <%= @number_of_days%> jours_______________<%= @rental_price %>€</p>
+<p>Frais de lessive_______________<%= @laundry_fee %>€</p>
+<p>Frais de service_______________<%= @company_fee %>€</p>
+<hr>
+<p><strong>Total</strong>_______________<strong><%= @rental_price + @laundry_fee + @company_fee %>€</strong></p>
+
+<% if (@request.sock.user == current_user && @request.status == 'pending') %>
+  <div class="owner-actions">
+    <%= link_to 'Accepter', accept_request_path(@request), class: "btn btn-success", data: { turbo_method: :patch } %>
+    <%= link_to 'Refuser', reject_request_path(@request), class: "btn btn-danger", data: { turbo_method: :patch } %>
+  </div>
+  <% else %>
+  <p>Status : <%= @request.status %>.</p>
+<% end %>
+
+ <%= link_to "Supprimer cette requête",
+  request_path(@request),
+  data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}
+%>
+ <%= link_to "Modifier cette requête",
+  edit_request_path
+%>
+</div>
+>>>>>>> master
