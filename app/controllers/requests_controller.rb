@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_sock, only: %i[new create]
-  before_action :set_request, only: %i[edit update destroy show]
+  before_action :set_request, only: %i[edit update destroy show ]
 
   def new
     @request = Request.new
@@ -23,7 +23,7 @@ class RequestsController < ApplicationController
 
   def index
     @requests = current_user.requests
-    @sock = @request.sock
+    @owner_requests = current_user.owner_requests
   end
 
   def edit
