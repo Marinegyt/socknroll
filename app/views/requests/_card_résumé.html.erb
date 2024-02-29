@@ -1,5 +1,5 @@
 <div class="card-product">
-  <%= image_tag("dobby.webp", width: "100px") %>
+  <%= cl_image_tag @sock.photo.key, width: "100px" %>
   <div class="card-product-infos">
     <h2><%= @sock.title %></h2>
     <p> Taille : <%= @sock.size %></p>

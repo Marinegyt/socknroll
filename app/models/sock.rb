@@ -1,4 +1,5 @@
 class Sock < ApplicationRecord
+  has_one_attached :photo
   belongs_to :user
   has_many :requests, dependent: :destroy
   has_one_attached :photo
