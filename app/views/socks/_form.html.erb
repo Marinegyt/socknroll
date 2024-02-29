@@ -1,20 +1,22 @@
 <%= render "shared/navbar" %>
+ <%# label: "Titre", label_html: { class: "btn btn-primary "}, input_html: { class: "btn" }, wrapper_html: { class: "btn btn-primary "}  %>
+<div class="container">
+  <h1>Quelques informations sur votre Chaussette :</h1>
+    <%= simple_form_for sock do |f| %>
 
-<h1>Quelques informations sur votre Chaussette :</h1>
-    <%= form_with model: sock do |f| %>
-      <div class = "d-flex col-6">
-        <p><%= f.label :title %> <%= f.text_field :title %></p>
-        <p><%= f.label :description %> <%= f.text_field :description %></p></div>
-        <div class = "d-flex col-6">
-        <p><%= f.label :price %> <%= f.text_field :price %></p>
-        <p><%= f.label :size %> <%= f.text_field :size%></p></div>
-        <div class = "d-flex col-6">
-        <p><%= f.label :color %> <%= f.select :color, collection: Sock::COLORS%></p>
-        <p><%= f.label :state %> <%= f.select :state, collection: Sock::STATES %></p></div>
-        <div class = "d-flex col-6">
-        <p><%= f.label :photo %> <%= f.file_field :photo, as: :file %></p>
-        <%= f.button :submit %>
+        <%= f.input :title, label: "Titre"%>
+        <%= f.input :description, input_html: { rows: "3" } %>
+
+        <%= f.input :price, label: "Prix"%>
+        <%= f.input :size, label: "Taille" %>
+        <%= f.input :color, collection: Sock::COLORS, label: "Couleur" %>
+        <%= f.input :state, collection: Sock::STATES, label: "État" %>
+
+        <%= f.input :photo, as: :file %>
+
+        <%= f.submit "Nouvelle chaussette", class: "btn btn-primary" %>
       <% end %></div>
+    </div>
 </div>
 <br>
 <%= link_to "Retour à la page d'accueil", socks_path %>
