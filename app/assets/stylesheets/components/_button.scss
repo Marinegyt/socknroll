@@ -39,3 +39,13 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-ghost.cancel {
+  color: #b62222;
+  border: 1px solid #b62222;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
