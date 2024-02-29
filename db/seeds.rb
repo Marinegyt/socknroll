@@ -16,10 +16,10 @@ puts "Utilisateurs détruits!"
 puts "Requêtes détruites!"
 
 puts "Création de nouveaux utilisateurs..."
-@user_marine = User.create!(first_name: "Marine", last_name: "Gayet", address: "4 Rue des céramistes, 64000 Pau", email: "marinegayet@gmail.com", password: "123456")
-@user_perrine = User.create!(first_name: "Perrine", last_name: "Guerrapin", address: "331 Avenue des buveurs de café, 22240 Plurien", email: "perrine.guerrapin@gmail.com", password: "123456")
-@user_cedric = User.create!(first_name: "Cédric", last_name: "Mingam", address: "2bis Allée des pères de famille, 71210 Le Marmot", email: "truc1@truc.com", password: "123456")
-@user_mathieu = User.create!(first_name: "Mathieu", last_name: "Rabet", address: "132 Boulevard des optimistes, 50239 Hébécrevon", email: "rabet.mathieu@gmail.com", password: "123456")
+@user_marine = User.create!(first_name: "Marine", last_name: "Gayet", address: "68 Mail François Mitterrand, 35000 Rennes", email: "marinegayet@gmail.com", password: "123456")
+@user_perrine = User.create!(first_name: "Perrine", last_name: "Guerrapin", address: "2 Rue de la Mabilais, 35000 Rennes", email: "perrine.guerrapin@gmail.com", password: "123456")
+@user_cedric = User.create!(first_name: "Cédric", last_name: "Mingam", address: "6 Rue des Portes Mordelaises, 35000 Rennes", email: "truc1@truc.com", password: "123456")
+@user_mathieu = User.create!(first_name: "Mathieu", last_name: "Rabet", address: "11 rue d'échange, 35000 Rennes", email: "rabet.mathieu@gmail.com", password: "123456")
 puts 'Utilisateurs créés !'
 
 puts "Création de nouvelles chaussettes..."

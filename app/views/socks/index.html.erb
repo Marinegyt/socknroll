@@ -16,8 +16,10 @@
     </div>
   </div>
 
-  <div class="card-map d-inline-flex">
-    <p>MAP</p>
+  <div class="mb-3 mt-3" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
   <div class="card-deck">

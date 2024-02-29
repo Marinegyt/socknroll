@@ -54,6 +54,7 @@ gem 'psych', '~> 2.0', '>= 2.0.17'
 # MY GEMS
 gem "devise"
 gem "cloudinary"
+gem "geocoder"
 
 group :development, :test do
   gem "dotenv-rails"
