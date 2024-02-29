@@ -1,34 +1,31 @@
-.card-sock {
+.card-text {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-sock > img {
+.card-text > img {
   height: 300px;
   width: 100%;
   object-fit: contain;
 }
 
-.card-sock h2 {
+.card-text h2 {
   margin: 0;
-}
-
-.card-sock p {
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-sock .card-sock-infos {
   padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
-.card-sock-infos .card-sock-user {
+.card-text p {
+  margin: 0;
+  padding: 0 0 8px 16px;
+}
+
+
+.card-text .card-text-infos {
+  padding: 16px;
+}
+
+.card-text-infos .card-text-user {
   position: absolute;
   right: 16px;
   top: -20px;

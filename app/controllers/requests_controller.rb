@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_sock, only: %i[new create]
+  before_action :set_sock, only: %i[new create update]
   before_action :set_request, only: %i[edit update destroy show accept reject]
 
   def new
@@ -39,11 +39,17 @@ class RequestsController < ApplicationController
   end
 
   def edit
+    @request = Request.find(params[:id])
   end
 
   def update
-    @request.update(request_params)
-    redirect_to request_path(@request)
+    @request = Request.find(params[:id])
+    if @request.update(request_params)
+      @request.save
+      redirect_to @request, notice: "Request was successfully updated.", status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

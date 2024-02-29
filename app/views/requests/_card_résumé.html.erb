@@ -1,9 +1,7 @@
-<div class="card-product">
+<div class="card-text">
   <%= cl_image_tag @sock.photo.key, width: "100px" %>
-  <div class="card-product-infos">
     <h2><%= @sock.title %></h2>
     <p> Taille : <%= @sock.size %></p>
     <p> Couleur : <%= @sock.color %></p>
     <p> Etat : <%= @sock.state %></p>
-  </div>
 </div>
