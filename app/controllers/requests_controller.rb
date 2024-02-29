@@ -23,6 +23,7 @@ class RequestsController < ApplicationController
 
   def index
     @requests = current_user.requests
+    @sock = @request.sock
   end
 
   def edit

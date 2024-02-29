@@ -1,5 +1,15 @@
 <div class="container">
-  <h1>Mes demandes</h1>
+  <% if @request.sock.user == current_user %>
+    <div class="owner-actions">
+      <h1>Mes demandes reçues</h1>
+      <div class="requests-container">
+        <%= render 'card_request', sock: @sock, requests: @requests%>
+      </div>
+    </div>
+  <% end %>
+
+
+  <h1>Mes demandes envoyées</h1>
   <div class="requests-container">
     <%= render 'card_request', sock: @sock, requests: @requests%>
   </div>
