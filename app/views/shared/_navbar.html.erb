@@ -19,19 +19,22 @@
                   <li class="nav-item">
                     <button class="btn btn-outline-primary"><%= link_to "Mes demandes", requests_path, class: "nav-link" %></button>
                   </li>
-            <li class="nav-item dropdown">
-              <%= image_tag "user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if user_signed_in? %>
-                    Welcome <%= current_user.first_name %>
-                      <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
-                        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-                    </div>
-                  <% else %>
-                <li class="nav-item"><button class="btn btn-outline-secondary"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button></li>
-              <% end %>
-            </li>
-        </ul>
+            <div class="dropup">
+              <div class="dropdown-toggle">
+              <li class="nav-item dropdown">
+                <%= image_tag "user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <% if user_signed_in? %>
+                      Welcome <%= current_user.first_name %>
+                        <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+                          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+                      </div>
+                    <% else %>
+                  <li class="nav-item"><button class="btn btn-outline-secondary"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button></li>
+                <% end %>
+              </li>
+              </div>
+            </ul>
       </div>
     </div>
   </div>
