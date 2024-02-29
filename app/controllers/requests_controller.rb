@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_sock, only: %i[new create]
-  before_action :set_request, only: %i[edit update destroy show ]
+  before_action :set_request, only: %i[edit update destroy show accept reject]
 
   def new
     @request = Request.new
@@ -27,12 +27,14 @@ class RequestsController < ApplicationController
   end
 
   def accept
-    @request.accepted!
+    @request.status = "accepted"
+    @request.save
     redirect_to request_path(@request), notice: "Le request a été accepté"
   end
 
   def reject
-    @request.rejected!
+    @request.status = "rejected"
+    @request.save
     redirect_to request_path(@request), notice: "Le request a été refusé"
   end
 

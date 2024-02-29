@@ -4,4 +4,6 @@ class Request < ApplicationRecord
   validates :start_date, :end_date, :user_msg, presence: true
   validates :user_msg, length: { minimum: 10 }
   # validates_comparison_of :start_date, less_than: :end_date, greater_than: -> { Date.today }
+
+  STATUS = ['pending', 'accepted', 'rejected']
 end
