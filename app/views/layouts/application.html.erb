@@ -10,9 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class= "height:100vh">
-   <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body>
+    <div class ="d-flex navbar-container mb-3">
+      <%= render "shared/navbar" %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
