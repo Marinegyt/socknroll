@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = current_user.requests
   end
 
   def edit

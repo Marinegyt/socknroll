@@ -15,10 +15,13 @@
 <p>Frais de service_______________<%= @company_fee %>€</p>
 <hr>
 <p><strong>Total</strong>_______________<strong><%= @rental_price + @laundry_fee + @company_fee %>€</strong></p>
-<button type="button" class="btn btn-success">Accepter</button>
-<br>
-<button type="button" class="btn btn-danger">Refuser</button>
-<br>
+<% if @request.sock.user == current_user %>
+  <div class="owner-actions">
+    <button type="button" class="btn btn-success">Accepter</button>
+    <button type="button" class="btn btn-danger">Refuser</button>
+  </div>
+<% end %>
+
  <%= link_to "Supprimer cette requête",
   request_path(@request),
   data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}
