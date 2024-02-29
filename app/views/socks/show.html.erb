@@ -1,21 +1,16 @@
 <%= render "shared/navbar" %>
-
-<div class="container p-3">
-  <div class="card-trip">
-    <%= cl_image_tag @sock.photo.key  %>
-    <div class="card-trip-infos">
-      <div>
-        <h2> <%= @sock.title %></h2>
-        <p> <%= @sock.description  %></p>
-      </div>
-      <h2>  <%= @sock.price  %>€/jour</h2>
-      <%= image_tag "user-solid.svg", class: "card-trip-user avatar-bordered" %>
+<div class="container">
+  <div class="card shadow p-3 mb-3 bg-white rounded">
+  <%= cl_image_tag @sock.photo.key, class:"card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @sock.title %></h5>
+      <p class="card-text"><%= @sock.description  %></p>
+      <hr>
+      <p class="card-text">Propriétaire : <%= @sock.user.first_name  %> <%= @sock.user.last_name  %></p>
+      <hr>
+      <p class="card-text"><small class="text-muted">Taille: <%= @sock.size  %> | État: <%= @sock.state  %> | Couleur: <%= @sock.color %></small></p>
     </div>
   </div>
   <br>
   <%= link_to 'Louer cette chaussette', new_sock_request_path(@sock), class: 'btn btn-primary' %>
-<br>
-  <%= link_to "Modifier cette annonce", edit_sock_path(@sock)%>
-  <br>
-  <%= link_to "Supprimer cette annonce", sock_path(@sock), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
 </div>
