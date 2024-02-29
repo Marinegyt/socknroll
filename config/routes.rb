@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'socks#index'
   get '/socks/drawer', to: 'socks#drawer'
+  patch '/requests/:id/accept', to: 'requests#accept', as: 'accept_request'
   resources :socks do
     resources :requests, only: [:create, :new]
   end

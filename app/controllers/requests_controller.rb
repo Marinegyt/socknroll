@@ -26,6 +26,16 @@ class RequestsController < ApplicationController
     @owner_requests = current_user.owner_requests
   end
 
+  def accept
+    @request.accepted!
+    redirect_to request_path(@request), notice: "Le request a été accepté"
+  end
+
+  def reject
+    @request.rejected!
+    redirect_to request_path(@request), notice: "Le request a été refusé"
+  end
+
   def edit
   end
 

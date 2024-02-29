@@ -17,7 +17,7 @@
 <p><strong>Total</strong>_______________<strong><%= @rental_price + @laundry_fee + @company_fee %>€</strong></p>
 <% if @request.sock.user == current_user %>
   <div class="owner-actions">
-    <button type="button" class="btn btn-success">Accepter</button>
+    <button type="button" class="btn btn-success"><%= link_to 'Accepter', request_path(@request)  %> </button>
     <button type="button" class="btn btn-danger">Refuser</button>
   </div>
 <% end %>
