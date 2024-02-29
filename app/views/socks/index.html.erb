@@ -15,7 +15,7 @@
 <div class="container">
   <% @socks.each do |sock| %>
     <div class="cards">
-      <div class="card-socks" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.squarespace-cdn.com/content/v1/64669fa1b4732456814c6070/1684982300529-2MXJAU9KNREZYI6HHMYR/Boot+Socks+detail.jpeg?format=1500w)">
+  <%= cl_image_tag sock.photo.key, class:"card-socks" %>
         <div class="card-socks-infos">
           <div class="row mb-3"><h2><%= sock.title %></h2></div>
             <div class="row mb-3"><p><%= sock.description %></p></div>

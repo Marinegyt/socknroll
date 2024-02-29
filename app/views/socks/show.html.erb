@@ -2,7 +2,7 @@
 
 <div class="container p-3">
   <div class="card-trip">
-    <%= image_tag "dobby.webp"  %>
+    <%= cl_image_tag @sock.photo.key  %>
     <div class="card-trip-infos">
       <div>
         <h2> <%= @sock.title %></h2>

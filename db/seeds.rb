@@ -23,11 +23,26 @@ puts "Création de nouveaux utilisateurs..."
 puts 'Utilisateurs créés !'
 
 puts "Création de nouvelles chaussettes..."
-@sock1 = Sock.create!(user: @user_cedric, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
-@sock2 = Sock.create!(user: @user_perrine, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
-@sock3 = Sock.create!(user: @user_mathieu, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
-@sock4 = Sock.create!(user: @user_marine, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
-@sock5 = Sock.create!(user: @user_cedric, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
+@sock1 = Sock.new(user: @user_cedric, title: "Chaussette élégante", description: "Une chaussette à porter pour impressionner vos invités lors d'événements chics.", price: 5, state: Sock::STATES[0], color: Sock::COLORS[1], size: 42)
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709135320/le-bar-a-chaussettes-chaussettes-bambou-confort-noires-51723947245901_tldbmg.jpg')
+@sock1.photo.attach(io: file, filename: 'elegant.jpg', content_type: 'image/jpg')
+@sock1.save!
+@sock2 = Sock.new(user: @user_perrine, title: "Chaussette farfelue", description: "Si vous vous sentez une humeur de parfait déglingos, cette chaussette est faite pour vous.", price: 2, state: Sock::STATES[4], color: Sock::COLORS.last, size: 38)
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709135486/CS-Maiden-Socks-01b_u1jffv.jpg')
+@sock2.photo.attach(io: file, filename: 'wacky.jpg', content_type: 'image/jpg')
+@sock2.save!
+@sock3 = Sock.new(user: @user_mathieu, title: "Chaussette de warrior", description: "Une chaussette utilisée pour donner de la vigueur au combat, se marie parfaitement avec un gilet jaune.", price: 3, state: Sock::STATES[3], color: Sock::COLORS[5], size: 46)
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709135192/le-bar-a-chaussettes-chaussettes-bambou-jacquard-jaunes-moutarde-52351629164877_rjsgox.jpg')
+@sock3.photo.attach(io: file, filename: 'warrior.jpg', content_type: 'image/jpg')
+@sock3.save!
+@sock4 = Sock.new(user: @user_marine, title: "Chaussette Gilles Verdez", description: "A ne porter uniquement que si vous êtes Gilles Verdez. Des choses terribles se produiront sinon.", price: 1, state: Sock::STATES[1], color: Sock::COLORS[4], size: 43)
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709136161/Capture_d_e%CC%81cran_2024-02-28_a%CC%80_17.02.14_sptfiq.png')
+@sock4.photo.attach(io: file, filename: 'gilles.jpg', content_type: 'image/jpg')
+@sock4.save!
+@sock5 = Sock.new(user: @user_cedric, title: "Chaussette de séduction", description: "Imprégnée d'extraits de rayanegosselingue, une plante aphrodisiaque, cette chaussette fera chavirer votre partenaire.", price: 10, state: Sock::STATES[0], color: Sock::COLORS[7], size: 44)
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709136364/SK-SKA-FUN-007-CID-1b_hq8yls.jpg')
+@sock5.photo.attach(io: file, filename: 'seduction.jpg', content_type: 'image/jpg')
+@sock5.save!
 puts 'Chaussettes créées !'
 
 
