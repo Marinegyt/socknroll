@@ -1,4 +1,4 @@
-<%= render "shared/navbar" %>
+
 <div class="container">
 
   <%= link_to requests_path do %>
@@ -28,10 +28,6 @@
     </div>
   </div>
 
-
-
-
-
   <% if (@request.sock.user == current_user && @request.status == 'pending') %>
     <div class="owner-actions">
       <%= link_to 'Accepter', accept_request_path(@request), class: "btn btn-success", data: { turbo_method: :patch } %>
@@ -48,4 +44,3 @@
   <% end %>
   <%= link_to "Modifier cette requête", edit_request_path, class: "btn btn-ghost"%>
 </div>
-

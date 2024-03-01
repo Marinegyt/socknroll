@@ -29,8 +29,8 @@
         <%= cl_image_tag sock.photo.key, class:"card-img-top" %>
       <div class="card-body">
         <div class="d-flex flex-row justify-content-between">
-        <h5 class="card-title"><%= sock.title %></h5>
-        <h5 class="card-title"><%= sock.price %>€</h5>
+        <h2 class="card-title"><%= sock.title %></h2>
+        <p class="card-title"><%= sock.price %>€</p>
         </div>
         <p class="card-text"><small class="text-muted">Taille : <%= sock.size %></small></p>
       <% end %>
