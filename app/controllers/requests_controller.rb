@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
     @request.sock = @sock
     if @request.save
-      redirect_to requests_path, notice: "La demande a été envoyée."
+      redirect_to requests_path
     else
       render 'new', status: :unprocessable_entity
     end
