@@ -6,7 +6,7 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 $h1-font: "Just Me Again Down Here", "cursive";
-
+$kanit: "Kanit", sans-serif;
 
 
 // To use a font file (.woff) uncomment following lines
@@ -18,3 +18,26 @@ $h1-font: "Just Me Again Down Here", "cursive";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
