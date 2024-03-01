@@ -11,27 +11,15 @@
     width: 100px;
   }
 
-.navbarSupportedContent {
+ .nav-item {
+  align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  display: flex;
+  margin-right: 1rem;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.navbarDropdown {
-  width: 10px;
-  height: auto;
- }
-
- .nav-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $strong-blue;
-  text-decoration: none;
   &:hover {
     color: $first-blue;
   }
- }
+}
