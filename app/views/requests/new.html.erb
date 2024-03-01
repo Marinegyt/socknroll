@@ -1,3 +1,7 @@
-<%= render "request" %>
-
- <%= render "request_form", request: @request,  sock: @sock%>
+<div class="container p-3">
+  <h1>Nouvelle requête :</h1>
+  <br>
+  <%= render "card_résumé" %>
+  <br>
+  <%= render "request_form", request: @request,  sock: @sock%>
+</div>
