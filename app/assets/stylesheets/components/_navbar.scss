@@ -4,19 +4,34 @@
   background: white;
   padding: 1rem 1rem;
   margin-bottom: -1rem;
-}
+  display: block;
+  }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 60px;
-}
+  .navbar-lewagon .navbar-brand img {
+    width: 100px;
+  }
 
 .navbarSupportedContent {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+
+.navbarDropdown {
+  width: 10px;
+  height: auto;
+ }
+
+ .nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $strong-blue;
+  text-decoration: none;
+  &:hover {
+    color: $first-blue;
+  }
+ }

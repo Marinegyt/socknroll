@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_sock, only: %i[new create update]
+  before_action :set_sock, only: %i[new create]
   before_action :set_request, only: %i[edit update destroy show accept reject]
 
   def new
@@ -43,18 +43,17 @@ class RequestsController < ApplicationController
   end
 
   def update
-    @request = Request.find(params[:id])
     if @request.update(request_params)
       @request.save
       redirect_to @request, notice: "La demande a été modifée.", status: :see_other
     else
-      render :edit, status: :unprocessable_entity
+      render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @request.destroy
-    redirect_to root_path
+    redirect_to requests_path(@request)
   end
 
   private
@@ -68,6 +67,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:start_date, :end_date, :user_msg, :price)
+    params.require(:request).permit(:start_date, :end_date, :user_msg)
   end
 end

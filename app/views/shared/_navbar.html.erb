@@ -1,48 +1,46 @@
 <div class="fixed-bottom padding-top">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar fixed-bottom navbar-light navbar-lewagon">
     <div class="container-fluid">
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo_3.svg" %>
       <% end %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-             <li class="nav-item active nav-link">
-             <%= link_to socks_path do %>
-               <i class="fa-solid fa-house"></i>
-            <% end %></li>
-            <li class="nav-item nav-link">
-            <%= link_to socks_drawer_path do %>
-               <i class="fa-solid fa-socks"></i>
-            <% end %></li>
-            <li class="nav-item nav-link">
-            <%= link_to new_sock_path do %>
-               <i class="fa-solid fa-plus"></i>
-            <% end %></li>
-            <li class="nav-item nav-link">
-            <%= link_to requests_path do %>
-               <i class="fa-solid fa-envelope"></i>
-            <% end %></li>
+        <div class="navbar-expand" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <div class="nav-item active nav-link">
+              <%= link_to socks_path do %>
+                <i class="fa-solid fa-house" color="$first-blue"></i>
+                <% end %></div>
+                  <div class="nav-item nav-link">
+                <%= link_to socks_drawer_path do %>
+                  <i class="fa-solid fa-socks"></i>
+                <% end %></div>
+                  <div class="nav-item nav-link">
+                <%= link_to new_sock_path do %>
+                  <i class="fa-solid fa-plus"></i>
+                <% end %></div>
+                  <div class="nav-item nav-link">
+                <%= link_to requests_path do %>
+                  <i class="fa-regular fa-calendar-days"></i>
+                <% end %></div>
+                </div>
 
             <div class="dropup">
-              <div class="dropdown-toggle">
               <li class="nav-item dropdown">
-                <%= image_tag "user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= image_tag "icons/user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <% if user_signed_in? %>
-                      Welcome <%= current_user.first_name %>
+                      Bienvenue <%= current_user.first_name %>
                         <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
-                          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+                          <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
                       </div>
                     <% else %>
-                  <li class="nav-item"><button class="btn btn-outline-secondary"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button></li>
+                  <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
                 <% end %>
-              </li>
+               </li>
               </div>
-            </ul>
+              </ul>
+        </div>
       </div>
     </div>
   </div>
