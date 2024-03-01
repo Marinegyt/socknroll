@@ -1,26 +1,20 @@
-
+<div class="container p-3">
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i5.walmartimages.com/asr/567e5341-8779-48fa-9b31-6e8d585e23c0.30dc5d966dae9c6df0bcc02864275f29.jpeg);">
-  <div class="container">
+   <div class="d-flex justify-content-between">
     <h1>My Socks</h1>
     <div class="btn btn-outline-secondary"><%= link_to "Proposez une Chaussette", new_sock_path %></div>
   </div>
-</div>
+  </div>
 
-<div class ="d-flex flex-column" style="min-height: 100vh">
-  <div class="flex-fill">
-    <div class="cards">
-      <% @my_socks.each do |sock| %>
-        <%= link_to sock_path(sock) do %>
-          <div class="card-socks" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path sock.photo.key, height: 300, crop: :fill %>')">
-              <%= link_to 'Louer cette chaussette', new_sock_request_path(@sock), class: 'btn btn-primary' %>
-                <%= link_to "Modifier cette annonce", edit_sock_path(@sock)%>
-                  <%= link_to "Supprimer cette annonce", sock_path(@sock), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
-                <%= sock.title %>
-              </div>
+<div class="card-sock">
+  <% @my_socks.each do |sock| %>
+    <div class="card-sock-infos" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path sock.photo.key, height: 300, crop: :fill %>')">
+        <h1><%= sock.title %></h1>
+          <%= link_to sock_path(sock) do %>
+              <br><%= link_to "Modifier cette annonce", edit_sock_path(sock)%>
+              <br><%= link_to "Supprimer cette annonce", sock_path(sock), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
             <% end %>
           </div>
-        <% end %>
-      </div>
     </div>
-  </div>
-</div>
+      <% end %>
+ </div>
