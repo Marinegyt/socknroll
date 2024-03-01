@@ -6,12 +6,12 @@
       <% end %>
 
         <div class="navbar-expand" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <div class="nav-item active nav-link">
+          <ul class="navbar-nav">
+            <div class="nav-item active nav-link">
               <%= link_to socks_path do %>
                 <i class="fa-solid fa-house" color="$first-blue"></i>
-                <% end %></div>
-                  <div class="nav-item nav-link">
+              <% end %></div>
+                <div class="nav-item nav-link">
                 <%= link_to socks_drawer_path do %>
                   <i class="fa-solid fa-socks"></i>
                 <% end %></div>
@@ -23,25 +23,12 @@
                 <%= link_to requests_path do %>
                   <i class="fa-regular fa-calendar-days"></i>
                 <% end %></div>
-                </div>
-
-            <div class="dropup">
-              <li class="nav-item dropdown">
-                <%= image_tag "icons/user-solid.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <% if user_signed_in? %>
-                      Bienvenue <%= current_user.first_name %>
-                        <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
-                          <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-                      </div>
-                    <% else %>
-                  <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-                <% end %>
-               </li>
+                <div class="nav-item">
+                <%= link_to socks_path do %>
+                <i class="fa-solid fa-user"></i>
+                <% end %></div>
               </div>
               </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
