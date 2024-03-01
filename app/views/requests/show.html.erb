@@ -36,10 +36,10 @@
     <p>Status : <%= @request.status %>.</p>
   <% end %>
 
-  <% if @request.sock.user == current_user %>
+  <% if @request.user == current_user %>
   <%= link_to "Supprimer cette requête",
     request_path(@request), class: "btn btn-ghost cancel",
     data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
-  <% end %>
   <%= link_to "Modifier cette requête", edit_request_path, class: "btn btn-ghost"%>
+  <% end %>
 </div>
