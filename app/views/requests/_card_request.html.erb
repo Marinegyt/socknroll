@@ -11,10 +11,6 @@
         <p> Etat : <%= sock.state %></p>
         <p> Date de début : <%= request.start_date %></p>
         <p> Date de fin : <%= request.end_date %></p>
-        <div class="card-request-actions">
-          <%= link_to "Modifier", edit_request_path(request), class: "btn btn-ghost" %>
-          <%= link_to "Annuler", requests_path, data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}, class: "btn btn-ghost cancel" %>
-        </div>
       </div>
     </div>
   <% end %>
