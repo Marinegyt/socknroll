@@ -19,7 +19,7 @@ class SocksController < ApplicationController
     @sock.user = current_user
     @sock.save
     if @sock.save
-      redirect_to sock_path(@sock), notice: "Sock was successfully created"
+      redirect_to sock_path(@sock)
     else
       render 'new', status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class SocksController < ApplicationController
   def update
     @sock = Sock.find(params[:id])
     if @sock.update(sock_params)
-      redirect_to @sock, notice: "Sock was successfully updated.", status: :see_other
+      redirect_to @sock
     else
       render :edit, status: :unprocessable_entity
     end

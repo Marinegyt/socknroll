@@ -27,15 +27,15 @@ class RequestsController < ApplicationController
   end
 
   def accept
-    @request.status = "accpeptée"
+    @request.status = "acceptée"
     @request.save
-    redirect_to request_path(@request), notice: "La demande a été accepté"
+    redirect_to request_path(@request)
   end
 
   def reject
     @request.status = "rejetée"
     @request.save
-    redirect_to request_path(@request), notice: "La demande a été refusé"
+    redirect_to request_path(@request)
   end
 
   def edit
@@ -45,7 +45,7 @@ class RequestsController < ApplicationController
   def update
     if @request.update(request_params)
       @request.save
-      redirect_to @request, notice: "La demande a été modifée.", status: :see_other
+      redirect_to @request
     else
       render 'edit', status: :unprocessable_entity
     end
