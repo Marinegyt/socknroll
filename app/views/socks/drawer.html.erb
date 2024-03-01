@@ -1,11 +1,11 @@
 <div class="container p-3">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i5.walmartimages.com/asr/567e5341-8779-48fa-9b31-6e8d585e23c0.30dc5d966dae9c6df0bcc02864275f29.jpeg);">
-      <h1>Mes Chausettes</h1>
+    <div class="banner d-flex justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i5.walmartimages.com/asr/567e5341-8779-48fa-9b31-6e8d585e23c0.30dc5d966dae9c6df0bcc02864275f29.jpeg);">
+      <h1>Mes Chaussettes</h1>
   </div>
     <div class="card-sock m-3">
       <% @my_socks.each do |sock| %>
         <%= link_to sock_path(sock) do %>
-          <%= cl_image_tag sock.photo.key, width: "100%", height: "300px"%>
+          <%= cl_image_tag sock.photo.key, class: "card-img-top" %>
           <div class="card-sock-info m-3">
             <h2><%= sock.title %></h2>
             <p> Taille : <%= sock.size %></p>
