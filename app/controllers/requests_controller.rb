@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
     @request.sock = @sock
     if @request.save
-      redirect_to requests_path, notice: "Request was successfully created"
+      redirect_to requests_path, notice: "La demande a été envoyée."
     else
       render 'new', status: :unprocessable_entity
     end
@@ -27,15 +27,15 @@ class RequestsController < ApplicationController
   end
 
   def accept
-    @request.status = "accepted"
+    @request.status = "accpeptée"
     @request.save
-    redirect_to request_path(@request), notice: "Le request a été accepté"
+    redirect_to request_path(@request), notice: "La demande a été accepté"
   end
 
   def reject
-    @request.status = "rejected"
+    @request.status = "rejetée"
     @request.save
-    redirect_to requests_path(@request), notice: "Le request a été refusé"
+    redirect_to request_path(@request), notice: "La demande a été refusé"
   end
 
   def edit
@@ -44,7 +44,8 @@ class RequestsController < ApplicationController
 
   def update
     if @request.update(request_params)
-      redirect_to requests_path(@request), notice: "Request was successfully updated.", status: :see_other
+      @request.save
+      redirect_to @request, notice: "La demande a été modifée.", status: :see_other
     else
       render 'edit', status: :unprocessable_entity
     end
