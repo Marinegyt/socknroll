@@ -14,7 +14,7 @@
   <% if @sock.user == current_user %>
     <%= link_to "Modifier", edit_sock_path, class: "btn btn-ghost"%>
     <%= link_to "Supprimer",
-      socks_drawer_path, class: "btn btn-ghost cancel",
+      sock_path(@sock), class: "btn btn-ghost cancel",
       data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
     <% else %>
       <%= link_to 'Louer cette chaussette', new_sock_request_path(@sock), class: 'btn btn-ghost rent' %>
