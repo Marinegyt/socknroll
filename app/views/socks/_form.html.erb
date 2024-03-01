@@ -1,22 +1,13 @@
-<%= render "shared/navbar" %>
- <%# label: "Titre", label_html: { class: "btn btn-primary "}, input_html: { class: "btn" }, wrapper_html: { class: "btn btn-primary "}  %>
-<div class="container">
-  <h1>Quelques informations sur votre Chaussette :</h1>
-    <%= simple_form_for sock do |f| %>
+<%= simple_form_for sock do |f| %>
+  <%= f.input :title, label: "Titre"%>
+  <%= f.input :description, input_html: { rows: "3" } %>
 
-        <%= f.input :title, label: "Titre"%>
-        <%= f.input :description, input_html: { rows: "3" } %>
+  <%= f.input :price, label: "Prix"%>
+  <%= f.input :size, label: "Taille" %>
+  <%= f.input :color, collection: Sock::COLORS, label: "Couleur" %>
+  <%= f.input :state, collection: Sock::STATES, label: "État" %>
 
-        <%= f.input :price, label: "Prix"%>
-        <%= f.input :size, label: "Taille" %>
-        <%= f.input :color, collection: Sock::COLORS, label: "Couleur" %>
-        <%= f.input :state, collection: Sock::STATES, label: "État" %>
+  <%= f.input :photo, as: :file %>
 
-        <%= f.input :photo, as: :file %>
-
-        <%= f.submit "Nouvelle chaussette", class: "btn btn-primary" %>
-      <% end %></div>
-    </div>
-</div>
-<br>
-<%= link_to "Retour à la page d'accueil", socks_path %>
+  <%= f.submit "Envoyer", class: "btn btn-primary" %>
+<% end %>
