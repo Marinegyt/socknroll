@@ -1,0 +1,32 @@
+.card-text {
+  overflow: hidden;
+  background: white;
+}
+
+.card-text > img {
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-text h2 {
+  margin: 0;
+  padding: 16px;
+}
+
+.card-text p {
+  margin: 0;
+  padding: 0 0 8px 16px;
+}
+
+
+.card-text .card-text-infos {
+  padding: 16px;
+}
+
+.card-text-infos .card-text-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
